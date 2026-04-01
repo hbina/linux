@@ -7,6 +7,10 @@
 
 ### Foundations
 - [Intrusive Linked Lists](linux/foundations/intrusive_linked_lists.md)
+- [WRITE_ONCE and Compiler Barriers](linux/foundations/write_once.md)
+
+### Workqueue
+- [Workqueue Subsystem Overview](linux/workqueue/overview.md)
 
 ### Interrupts
 - [Linux Interrupt Architecture](linux/interrupts/linux_interrupt_architecture.md)
