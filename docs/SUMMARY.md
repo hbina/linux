@@ -1,5 +1,8 @@
 # Summary
 
+## Meta
+- [Progress Tracker](PROGRESS.md) — current stage across all study phases
+
 ## Linux Kernel
 
 ### Interrupts
@@ -11,7 +14,8 @@
 - [AMD GPU flip_done Timeout](linux/gpu/flip_done_timeout_amdgpu.md)
 - [Crash Analysis 2026-03-15](linux/gpu/crash_analysis_20260315.md)
 
-### Real-Time / Low-Latency
+### Study Plans
+- [Kernel Foundations Study Plan](linux/kernel-foundations-study-plan.md)
 - [Real-Time Low-Latency Study Plan](linux/realtime/realtime-lowlatency-study-plan.md)
 
 ### Tools
