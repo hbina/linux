@@ -5,6 +5,9 @@
 
 ## Linux Kernel
 
+### Foundations
+- [Intrusive Linked Lists](linux/foundations/intrusive_linked_lists.md)
+
 ### Interrupts
 - [Linux Interrupt Architecture](linux/interrupts/linux_interrupt_architecture.md)
 - [INT3515 IRQ Issue Investigation](linux/interrupts/INT3515_IRQ_issue_investigation.md)
