@@ -6,6 +6,27 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is the Linux kernel source tree (currently v7.0-rc5, "Baby Opossum Posse"). The primary goal in this workspace is **read-only exploration and learning** — understanding kernel internals, not modifying the kernel itself. Learnings, investigation notes, and explorations should be written to `docs/` in this repository root.
 
+## Learning Progress
+
+**Always read `docs/PROGRESS.md` at the start of every conversation.**
+It tracks which phases of the study plan have been completed, which are in
+progress, and what was covered in the last session. Use it to:
+- Know what the user already understands (don't re-explain it)
+- Know what the next logical topic is
+- Calibrate explanation depth to existing knowledge
+
+The structured study plan is in `docs/linux/kernel-foundations-study-plan.md`.
+The RT/low-latency plan is in `docs/linux/realtime/realtime-lowlatency-study-plan.md`.
+
+**IMPORTANT — progress updates:**
+- **Never mark a checklist item or phase as complete on the user's behalf.**
+- Only tick off items (`[ ]` → `[x]`) or update phase status when the user
+  **explicitly states** they have completed or understood that item/phase.
+- Observing that the user has read a file is not sufficient — wait for the user
+  to confirm understanding before marking anything done.
+- You may use `[~]` (in progress) when the user is actively working through
+  something but has not yet confirmed completion.
+
 ---
 
 ## Build & Navigation Commands
