@@ -23,6 +23,7 @@
 
 ### Study Plans
 - [Kernel Foundations Study Plan](linux/kernel-foundations-study-plan.md)
+- [Machine-First Kernel Study Plan](linux/machine-first-study-plan.md)
 - [Real-Time Low-Latency Study Plan](linux/realtime/realtime-lowlatency-study-plan.md)
 
 ### Tools
