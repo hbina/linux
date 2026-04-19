@@ -6,6 +6,11 @@ This file provides foundational guidance to coding agents when working with code
 
 This is the Linux kernel source tree (currently v7.0-rc5, "Baby Opossum Posse"). The primary goal in this workspace is **read-only exploration and learning** — understanding kernel internals, not modifying the kernel itself. Learnings, investigation notes, and explorations should be written to `docs/` in this repository root.
 
+When the user asks for analysis, notes, or study help, prefer updating or adding
+files under `docs/` rather than changing kernel source files. Treat kernel code
+edits as exceptional and only do them when the user explicitly asks for source
+modifications.
+
 ## Learning Progress
 
 **Always read `docs/PROGRESS.md` at the start of every conversation.**
