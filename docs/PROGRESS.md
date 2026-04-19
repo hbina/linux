@@ -24,6 +24,20 @@ Detailed concrete checklist is in `docs/linux/kernel-foundations-study-plan.md`.
 Each phase below links to the section. Tick a phase only when all items in the
 detailed plan are done.
 
+Primary practical plan is now also in `docs/linux/machine-first-study-plan.md`.
+Use that plan to guide subsystem order for work on the hardware this machine
+actually uses; use the foundations plan as just-in-time background/reference.
+
+## Machine-First Practical Track
+
+- [ ] **M0** Runtime inventory of this machine — NICs, GPU, storage, cpufreq, idle, and module map
+- [ ] **M1** Wired networking (`r8169`) + generic RX/TX path
+- [ ] **M2** Wi-Fi (`iwlwifi` / `iwlmvm`)
+- [ ] **M3** GPU / display (`amdgpu` + DRM)
+- [ ] **M4** Storage (`nvme` + page cache + `ext4`)
+- [ ] **M5** Cross-cutting runtime behavior — IRQs, softirqs, workqueues, scheduling, power
+- [ ] **M6** Real-hardware bug-fixing workflow and local kernel instrumentation
+
 ## Phase 1 — Core Data Structures
 
 - [~] **1.1** Intrusive linked lists (`include/linux/list.h`) — 9/12 done; remaining: workqueue.c grep, kernel/pid.c hlist trace, llist.h lock-free add
@@ -125,3 +139,8 @@ They count as practical knowledge even though they skipped prerequisites.
 - Assessed current progress: Phases 6–7 partially done via investigation work; Phases 1–5 not started
 - Read `tools/include/linux/list.h` in full — covered list_head, container_of, INIT_LIST_HEAD, list_add/tail, list_del/del_init, list_for_each_entry, list_for_each_entry_safe, hlist with pprev trick
 - **Next session:** finish 1.1 — grep workqueue.c for safe iteration, trace pid.c hlist lookup, read llist.h
+
+### 2026-04-19
+- Added a machine-first practical study plan (`docs/linux/machine-first-study-plan.md`)
+- Reoriented study order toward the drivers and subsystems this machine actually uses: `r8169`, `iwlwifi`/`iwlmvm`, `amdgpu`, `nvme`, `ext4`, `acpi-cpufreq`, `acpi_idle`
+- Foundations plan remains the reference plan; machine-first plan is now the default practical path
