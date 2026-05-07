@@ -4,7 +4,7 @@ This file tracks what has been studied, understood, and noted.
 Update it after each session. Claude reads this at the start of each conversation
 to know where you are and what to build on.
 
-**Last updated:** 2026-04-01
+**Last updated:** 2026-05-03
 
 ---
 
@@ -40,7 +40,7 @@ actually uses; use the foundations plan as just-in-time background/reference.
 
 ## Phase 1 — Core Data Structures
 
-- [~] **1.1** Intrusive linked lists (`include/linux/list.h`) — 9/12 done; remaining: workqueue.c grep, kernel/pid.c hlist trace, llist.h lock-free add
+- [x] **1.1** Intrusive linked lists (`include/linux/list.h`) — 12/12 done
 - [ ] **1.2** Red-black trees (`include/linux/rbtree.h`, `lib/rbtree.c`) — 5 items
 - [ ] **1.3** XArrays (`include/linux/xarray.h`) — 6 items
 - [ ] **1.4** Hash tables (`include/linux/hashtable.h`) — 4 items
@@ -144,3 +144,7 @@ They count as practical knowledge even though they skipped prerequisites.
 - Added a machine-first practical study plan (`docs/linux/machine-first-study-plan.md`)
 - Reoriented study order toward the drivers and subsystems this machine actually uses: `r8169`, `iwlwifi`/`iwlmvm`, `amdgpu`, `nvme`, `ext4`, `acpi-cpufreq`, `acpi_idle`
 - Foundations plan remains the reference plan; machine-first plan is now the default practical path
+
+### 2026-05-03
+- Finished Phase 1.1 (intrusive linked lists) — completed the remaining three items: `workqueue.c` safe-iteration grep, `kernel/pid.c` hlist lookup trace, and `llist.h` lock-free add caller
+- **Next session:** Phase 1.2 (red-black trees) on the foundations track, or M0 (runtime inventory) on the machine-first track

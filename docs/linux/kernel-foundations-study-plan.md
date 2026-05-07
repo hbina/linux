@@ -22,10 +22,10 @@ Track high-level completion in `docs/PROGRESS.md`.
 - [x] Read `list_del_init()` — how does it differ from `list_del()`? When would you use each?
 - [x] Read `list_for_each_entry(pos, head, member)` — trace through the macro: it calls `container_of` on each `list_head` in the ring to recover the enclosing struct.
 - [x] Read `list_for_each_entry_safe(pos, n, head, member)` — `n` is a saved-next cursor. Answer: why can you safely call `list_del(pos)` inside this loop but not inside `list_for_each_entry`?
-- [ ] Grep for `list_for_each_entry_safe` in `kernel/workqueue.c`. Find one call site and explain why deletion during iteration is needed there.
+- [x] Grep for `list_for_each_entry_safe` in `kernel/workqueue.c`. Find one call site and explain why deletion during iteration is needed there.
 - [x] Read `include/linux/hlist.h`: `struct hlist_head` has one pointer; `struct hlist_node` has `next` and `**pprev` (pointer-to-pointer). Answer: why `**pprev` instead of `*prev`, and what memory does this save in a hash table with millions of buckets?
-- [ ] Find `hlist` used for PID lookup: open `kernel/pid.c`, find `struct upid` — it embeds `struct hlist_node pid_chain`. Find the `pid_hash[]` array. Answer: why is `hlist` better than `list_head` here?
-- [ ] Read `include/linux/llist.h`: `llist_add()` uses `cmpxchg` — it is lock-free. Find one caller in `kernel/` and explain why lock-freedom matters in that context.
+- [x] Find `hlist` used for PID lookup: open `kernel/pid.c`, find `struct upid` — it embeds `struct hlist_node pid_chain`. Find the `pid_hash[]` array. Answer: why is `hlist` better than `list_head` here?
+- [x] Read `include/linux/llist.h`: `llist_add()` uses `cmpxchg` — it is lock-free. Find one caller in `kernel/` and explain why lock-freedom matters in that context.
 
 ### 1.2 Red-Black Trees
 
