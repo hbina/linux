@@ -4,7 +4,7 @@ This file tracks what has been studied, understood, and noted.
 Update it after each session. Claude reads this at the start of each conversation
 to know where you are and what to build on.
 
-**Last updated:** 2026-05-03
+**Last updated:** 2026-05-30
 
 ---
 
@@ -41,9 +41,9 @@ actually uses; use the foundations plan as just-in-time background/reference.
 ## Phase 1 — Core Data Structures
 
 - [x] **1.1** Intrusive linked lists (`include/linux/list.h`) — 12/12 done
-- [ ] **1.2** Red-black trees (`include/linux/rbtree.h`, `lib/rbtree.c`) — 5 items
-- [ ] **1.3** XArrays (`include/linux/xarray.h`) — 6 items
-- [ ] **1.4** Hash tables (`include/linux/hashtable.h`) — 4 items
+- [x] **1.2** Red-black trees (`include/linux/rbtree.h`, `lib/rbtree.c`) — 5/5 done
+- [x] **1.3** XArrays (`include/linux/xarray.h`) — 6/6 done
+- [x] **1.4** Hash tables (`include/linux/hashtable.h`) — 4/4 done
 
 ## Phase 2 — Concurrency Primitives
 
@@ -148,3 +148,7 @@ They count as practical knowledge even though they skipped prerequisites.
 ### 2026-05-03
 - Finished Phase 1.1 (intrusive linked lists) — completed the remaining three items: `workqueue.c` safe-iteration grep, `kernel/pid.c` hlist lookup trace, and `llist.h` lock-free add caller
 - **Next session:** Phase 1.2 (red-black trees) on the foundations track, or M0 (runtime inventory) on the machine-first track
+
+### 2026-05-30
+- User confirmed all Phase 1 core data structures have been studied: intrusive linked lists, red-black trees, XArrays, and hash tables.
+- **Next session:** Phase 2.1 (spinlocks) on the foundations track, or M0 (runtime inventory) on the machine-first track.

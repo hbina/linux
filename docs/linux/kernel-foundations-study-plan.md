@@ -29,27 +29,27 @@ Track high-level completion in `docs/PROGRESS.md`.
 
 ### 1.2 Red-Black Trees
 
-- [ ] Read `include/linux/rbtree.h`: `struct rb_node` embeds colour in the low bit of the parent pointer (`__rb_parent_color`). Answer: why use a pointer bit rather than a separate `bool color` field?
-- [ ] Read `rb_entry(ptr, type, member)` — it is `container_of`. Same pattern as `list_entry`.
-- [ ] Read `lib/rbtree.c`: `rb_insert_color()` — skim the rotation cases. You do not need to memorise them, but identify: what are the three cases handled after inserting a red node?
-- [ ] Open `kernel/time/hrtimer.c`. Find `struct timerqueue_node` — it wraps `struct rb_node`. Find `timerqueue_add()` — it inserts into the RB-tree and tracks the leftmost node separately. Answer: why cache the leftmost node?
-- [ ] Open `mm/mmap.c`. Find where `struct vm_area_struct` is inserted into the RB-tree (`vma_rb_insert` or similar). Find `find_vma()` — it walks the tree. Answer: what is the key used for ordering VMAs?
+- [x] Read `include/linux/rbtree.h`: `struct rb_node` embeds colour in the low bit of the parent pointer (`__rb_parent_color`). Answer: why use a pointer bit rather than a separate `bool color` field?
+- [x] Read `rb_entry(ptr, type, member)` — it is `container_of`. Same pattern as `list_entry`.
+- [x] Read `lib/rbtree.c`: `rb_insert_color()` — skim the rotation cases. You do not need to memorise them, but identify: what are the three cases handled after inserting a red node?
+- [x] Open `kernel/time/hrtimer.c`. Find `struct timerqueue_node` — it wraps `struct rb_node`. Find `timerqueue_add()` — it inserts into the RB-tree and tracks the leftmost node separately. Answer: why cache the leftmost node?
+- [x] Open `mm/mmap.c`. Find where `struct vm_area_struct` is inserted into the RB-tree (`vma_rb_insert` or similar). Find `find_vma()` — it walks the tree. Answer: what is the key used for ordering VMAs?
 
 ### 1.3 XArrays
 
-- [ ] Read `Documentation/core-api/xarray.rst` — the full overview. Answer: what problem did XArray replace (hint: radix tree), and what did the API simplify?
-- [ ] Read `include/linux/xarray.h`: `xa_load(xa, index)` and `xa_store(xa, index, entry, gfp)` — these are the fundamental read and write operations.
-- [ ] Read `xa_for_each(xa, index, entry)` — it iterates over all present entries. Note that gaps (absent entries) are skipped automatically.
-- [ ] Open `include/linux/fs.h`. Find `struct address_space` — it contains `struct xarray i_pages`. This is the page cache: `i_pages` maps file offset (in pages) to `struct folio *`.
-- [ ] Open `mm/filemap.c`. Find `filemap_get_folio()` — it calls `xa_load(&mapping->i_pages, index)`. Answer: what does it do when `xa_load` returns NULL (page not in cache)?
-- [ ] Answer: what is an "exceptional entry" in XArray? Grep for `xa_is_value()` in `mm/` to find where swap entries are stored as exceptional XArray entries.
+- [x] Read `Documentation/core-api/xarray.rst` — the full overview. Answer: what problem did XArray replace (hint: radix tree), and what did the API simplify?
+- [x] Read `include/linux/xarray.h`: `xa_load(xa, index)` and `xa_store(xa, index, entry, gfp)` — these are the fundamental read and write operations.
+- [x] Read `xa_for_each(xa, index, entry)` — it iterates over all present entries. Note that gaps (absent entries) are skipped automatically.
+- [x] Open `include/linux/fs.h`. Find `struct address_space` — it contains `struct xarray i_pages`. This is the page cache: `i_pages` maps file offset (in pages) to `struct folio *`.
+- [x] Open `mm/filemap.c`. Find `filemap_get_folio()` — it calls `xa_load(&mapping->i_pages, index)`. Answer: what does it do when `xa_load` returns NULL (page not in cache)?
+- [x] Answer: what is an "exceptional entry" in XArray? Grep for `xa_is_value()` in `mm/` to find where swap entries are stored as exceptional XArray entries.
 
 ### 1.4 Hash Tables
 
-- [ ] Read `include/linux/hashtable.h`: `DECLARE_HASHTABLE(name, bits)` declares an array of `2^bits` `hlist_head` buckets.
-- [ ] Read `hash_add(htable, node, key)` — it calls `hash_min(key, HASH_BITS(htable))` to select the bucket. Read `include/linux/hash.h`: `hash_32()` uses Fibonacci (golden-ratio) hashing. Answer: why is Fibonacci hashing better than `key % table_size`?
-- [ ] Read `hash_for_each_possible(htable, obj, member, key)` — iterates only the bucket matching `key`. Contrast with `hash_for_each` which iterates all buckets.
-- [ ] Open `kernel/pid.c`. Find `find_pid_ns()` — it calls `hash_for_each_possible` on `pid_hash`. Trace the full lookup: hash key → bucket → `hlist` walk → `struct upid` → `struct pid`.
+- [x] Read `include/linux/hashtable.h`: `DECLARE_HASHTABLE(name, bits)` declares an array of `2^bits` `hlist_head` buckets.
+- [x] Read `hash_add(htable, node, key)` — it calls `hash_min(key, HASH_BITS(htable))` to select the bucket. Read `include/linux/hash.h`: `hash_32()` uses Fibonacci (golden-ratio) hashing. Answer: why is Fibonacci hashing better than `key % table_size`?
+- [x] Read `hash_for_each_possible(htable, obj, member, key)` — iterates only the bucket matching `key`. Contrast with `hash_for_each` which iterates all buckets.
+- [x] Open `kernel/pid.c`. Find `find_pid_ns()` — it calls `hash_for_each_possible` on `pid_hash`. Trace the full lookup: hash key → bucket → `hlist` walk → `struct upid` → `struct pid`.
 
 ---
 
